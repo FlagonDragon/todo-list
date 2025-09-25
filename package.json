@@ -1,7 +1,7 @@
 {
-  "name": "restaurant-page",
+  "name": "todo-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "npm install --save-dev webpack webpack-cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlagonDragon/restaurant-page.git"
+    "url": "git+https://github.com/FlagonDragon/todo-list.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FlagonDragon/restaurant-page/issues"
+    "url": "https://github.com/FlagonDragon/todo-list/issues"
   },
-  "homepage": "https://github.com/FlagonDragon/restaurant-page#readme",
+  "homepage": "https://github.com/FlagonDragon/todo-list#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",
@@ -29,5 +29,8 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
   }
 }
