@@ -5,13 +5,14 @@ class Project {
     constructor(name) {
         
         this.name = name;
-        this.items = []
+        this.todos = []
 
     };
 
 };
 
-const myProjects = [];
+
+
 
 function addProject(name) {
 
