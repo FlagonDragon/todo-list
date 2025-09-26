@@ -22,12 +22,28 @@ function writeContent() {
             console.log(todo.title)
 
             var todoDiv = document.createElement('div');
-
             todoDiv.classList.add('todoDiv');
-            
-            todoDiv.textContent += todo.title
-
             projectDiv.appendChild(todoDiv);
+
+            var todoTitle = document.createElement('span');
+            todoTitle.classList.add('todoTitle');
+            todoTitle.textContent = todo.title;
+            todoDiv.appendChild(todoTitle);
+
+            var todoDesc = document.createElement('span');
+            todoDesc.classList.add('todoDesc');
+            todoDesc.textContent = todo.description;
+            todoDiv.appendChild(todoDesc);
+
+            var todoDate = document.createElement('span');
+            todoDate.classList.add('todoDate');
+            todoDate.textContent = todo.dueDate;
+            todoDiv.appendChild(todoDate);
+
+            var todoPrio = document.createElement('span');
+            todoPrio.classList.add('todoPrio');
+            todoPrio.textContent = todo.priority;
+            todoDiv.appendChild(todoPrio);
 
         });
 

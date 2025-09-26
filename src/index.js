@@ -29,7 +29,7 @@ addProject('Singing');
 
 addProject('Studying');
 
-addTodo('Yoga','leg stretch','yea','yea','yea');
+addTodo('Yoga','leg stretch','yea','ok','aha');
 
 addTodo('Cooking','marinated eggs','yea','yea','yea');
 
