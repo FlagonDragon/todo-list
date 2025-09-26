@@ -1,6 +1,9 @@
 * {
-    background-color: lightgoldenrodyellow;
     box-sizing: border-box;
+}
+
+body {
+    background-color: lightgoldenrodyellow;
 }
 
 #content {
@@ -25,4 +28,10 @@ h1 {
     width: 200px;
     margin: 20px;
     padding-top: 20px
+}
+
+.todoDiv {
+    font-size: 18px;
+    text-align: left;
+    padding: 10px;
 }

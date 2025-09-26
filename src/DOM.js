@@ -2,8 +2,6 @@
 
 const content = document.getElementById('content');
 
-// content.textContent = 'lalapaloza';
-
 
 function writeContent() {
 
@@ -18,6 +16,20 @@ function writeContent() {
         projectDiv.textContent += project.name;
 
         content.appendChild(projectDiv);
+
+        project.todos.forEach(todo => {
+
+            console.log(todo.title)
+
+            var todoDiv = document.createElement('div');
+
+            todoDiv.classList.add('todoDiv');
+            
+            todoDiv.textContent += todo.title
+
+            projectDiv.appendChild(todoDiv);
+
+        });
 
     });
 
