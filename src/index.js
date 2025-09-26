@@ -1,13 +1,11 @@
 
 
 import './styles.css';
-
 import addProject from './projects.js'
-
 import addTodo from './todos.js'
+import writeContent from './DOM.js'
 
 window.myProjects = [];
-
 
 
 const bestJoJo = 'Jolyne Cujoh';
@@ -21,22 +19,27 @@ console.log(bestJoJo);
 console.log('eyy')
 
 
-addProject('yoga');
+addProject('Yoga');
 
-addProject('cooking');
+addProject('Cooking');
 
-addProject('writing');
+addProject('Writing');
 
-addTodo('yoga','leg stretch','yea','yea','yea');
+addProject('Singing');
 
-addTodo('cooking','marinated eggs','yea','yea','yea');
+addProject('Studying');
 
-addTodo('cooking','chococookie','yea','yea','yea');
+addTodo('Yoga','leg stretch','yea','yea','yea');
+
+addTodo('Cooking','marinated eggs','yea','yea','yea');
+
+addTodo('Cooking','chococookie','yea','yea','yea');
 
 // console.log(testFinder('writing'));
 
 // testFinder('cooking');
 
+writeContent();
 
 
 

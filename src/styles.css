@@ -1,3 +1,28 @@
 * {
-    background-color: darkred;
+    background-color: lightgoldenrodyellow;
+    box-sizing: border-box;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+
+h1 {
+    margin-left: 30px;
+}
+
+.projectDiv {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: violet;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 250px;
+    width: 200px;
+    margin: 20px;
+    padding-top: 20px
 }
