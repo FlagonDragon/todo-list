@@ -29,11 +29,11 @@ addProject('Singing');
 
 addProject('Studying');
 
-addTodo('Yoga','leg stretch','yea','ok','aha');
+addTodo('Yoga','Stretch legs','None','08/10','Low');
 
-addTodo('Cooking','marinated eggs','yea','yea','yea');
+addTodo('Cooking','Prepare lunch','None','11/10','High');
 
-addTodo('Cooking','chococookie','yea','yea','yea');
+addTodo('Cooking','Bake sponge cake','None','11/10','Medium');
 
 // console.log(testFinder('writing'));
 
