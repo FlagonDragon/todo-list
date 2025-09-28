@@ -1,7 +1,8 @@
 // DOM manipulation
 
-let content = document.getElementById('content');
+import {addTodoListeners} from './addListeners.js'
 
+let content = document.getElementById('content');
 
 function writeContent() {
 
@@ -75,6 +76,10 @@ function writeContent() {
 
     });
 
-}
+    addTodoListeners();
+
+};
+
+
 
 export default writeContent;
