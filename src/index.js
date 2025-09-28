@@ -3,7 +3,7 @@
 import './styles.css';
 import addProject from './projects.js'
 import addTodo from './todos.js'
-import {addConfirmListener} from './addListeners.js'
+import {addTodoConfirmListener} from './addListeners.js'
 import writeContent from './DOM.js'
 
 window.myProjects = [];
@@ -42,7 +42,7 @@ addTodo('Cooking','Bake sponge cake','None','11/10','Medium');
 
 writeContent();
 
-addConfirmListener();
+addTodoConfirmListener();
 
 
 

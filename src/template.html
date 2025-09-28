@@ -7,9 +7,36 @@
 </head>
 <body>
 
-    <h1>TODO LIST APP</h1>
+    <dialog id="projectDialog">
 
-    <dialog id="myDialog">
+        <form>
+
+            <div>
+                <label for="name">Title:</label>
+                <input type="text" id="name">
+            </div>
+
+            <div>
+
+                <button value="cancel" formmethod="dialog">Cancel</button>
+
+                <button id="confirmButton" value="default">Confirm</button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+    <div id="appHeader">
+
+        <h1>TODO LIST APP</h1>
+
+        <button id="addProject">Add Project</button>
+
+    </div> 
+
+    <dialog id="todoDialog">
 
         <form>
 

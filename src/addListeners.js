@@ -2,14 +2,15 @@
 
 import addTodo from './todos.js'
 import writeContent from './DOM.js'
+import addProject from './projects.js';
 
-const myDialog = document.getElementById("myDialog");
-const targetProjectInput = myDialog.querySelector("#targetProject");
-const titleInput = myDialog.querySelector("#title");
-const descriptionInput = myDialog.querySelector("#description");
-const dueDateInput = myDialog.querySelector("#dueDate");
-const priorityInput = myDialog.querySelector("#priority");
-const confirmBtn = myDialog.querySelector("#confirmBtn");
+const todoDialog = document.getElementById("todoDialog");
+const targetProjectInput = todoDialog.querySelector("#targetProject");
+const titleInput = todoDialog.querySelector("#title");
+const descriptionInput = todoDialog.querySelector("#description");
+const dueDateInput = todoDialog.querySelector("#dueDate");
+const priorityInput = todoDialog.querySelector("#priority");
+const confirmBtn = todoDialog.querySelector("#confirmBtn");
 
 function addTodoListeners() {
 
@@ -19,7 +20,7 @@ function addTodoListeners() {
 
         button.addEventListener('click', () => {
 
-            myDialog.showModal();
+            todoDialog.showModal();
 
         });
 
@@ -27,13 +28,29 @@ function addTodoListeners() {
 
 };
 
-function addConfirmListener() {
+function addProjectConfirmListener() {
+
+    confirmButton.addEventListener('click', (event) => {
+
+        event.preventDefault();
+
+        projectDialog.close();
+
+        addProject(nameInput.value);
+
+        writeContent();
+
+    });
+
+};
+
+function addTodoConfirmListener() {
 
     confirmBtn.addEventListener('click', (event) => {
 
         event.preventDefault();
 
-        myDialog.close();
+        todoDialog.close();
 
         addTodo(targetProjectInput.value, titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value);
 
@@ -43,4 +60,4 @@ function addConfirmListener() {
 
 };
 
-export {addTodoListeners, addConfirmListener};
+export {addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, };
