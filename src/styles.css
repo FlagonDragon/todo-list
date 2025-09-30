@@ -75,3 +75,10 @@ h1 {
     font-size: 14px;
 }
 
+.expandBtn {
+    width: 45px;
+    color: white;
+    background-color: darkmagenta;
+    border-radius: 8px;
+}
+

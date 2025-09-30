@@ -2,7 +2,11 @@
 
 import addTodo from './todos.js'
 import writeContent from './DOM.js'
-import addProject from './projects.js';
+import addProject from './projects.js'
+
+const projectDialog = document.getElementById("projectDialog");
+const nameInput = projectDialog.querySelector("#name");
+const addProjectBtn = document.getElementById("addProjectBtn");
 
 const todoDialog = document.getElementById("todoDialog");
 const targetProjectInput = todoDialog.querySelector("#targetProject");
@@ -11,6 +15,16 @@ const descriptionInput = todoDialog.querySelector("#description");
 const dueDateInput = todoDialog.querySelector("#dueDate");
 const priorityInput = todoDialog.querySelector("#priority");
 const confirmBtn = todoDialog.querySelector("#confirmBtn");
+
+function addProjectListener() {
+
+    addProjectBtn.addEventListener('click', () => {
+
+        projectDialog.showModal();
+
+    });
+
+};
 
 function addTodoListeners() {
 
@@ -60,4 +74,4 @@ function addTodoConfirmListener() {
 
 };
 
-export {addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, };
+export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener};

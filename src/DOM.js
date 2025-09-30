@@ -1,6 +1,6 @@
 // DOM manipulation
 
-import {addTodoListeners} from './addListeners.js'
+import {addProjectListener, addTodoListeners} from './addListeners.js'
 
 let content = document.getElementById('content');
 
@@ -55,16 +55,21 @@ function writeContent() {
             todoTitle.textContent = todo.title;
             todoDiv.appendChild(todoTitle);
 
-            var todoDesc = document.createElement('span');
-            todoDesc.classList.add('detail');
-            todoDesc.textContent = todo.description;
-            todoDiv.appendChild(todoDesc);
-
             var todoDate = document.createElement('span');
             todoDate.classList.add('todoDate');
             todoDate.classList.add('detail');
             todoDate.textContent = todo.dueDate;
             todoDiv.appendChild(todoDate);
+
+            var expandBtn = document.createElement('button');
+            expandBtn.classList.add('expandBtn');
+            expandBtn.textContent = 'Desc.';
+            todoDiv.appendChild(expandBtn);
+
+            var todoDesc = document.createElement('span');
+            todoDesc.classList.add('detail');
+            todoDesc.textContent = todo.description;
+            todoDiv.appendChild(todoDesc);
 
             var todoPrio = document.createElement('span');
             todoPrio.classList.add('todoPrio');
@@ -76,6 +81,7 @@ function writeContent() {
 
     });
 
+    addProjectListener();
     addTodoListeners();
 
 };
