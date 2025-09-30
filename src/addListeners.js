@@ -74,4 +74,35 @@ function addTodoConfirmListener() {
 
 };
 
-export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener};
+
+
+
+function addExpandListener() {
+
+    const expandBtns = document.querySelectorAll('.expandBtn');
+
+    for (let button of expandBtns) {
+
+        button.addEventListener('click', () => {
+
+            button.classList.toggle("active");
+
+            var descBox = button.nextElementSibling;
+
+            if (descBox.style.display === "flex") {
+
+                descBox.style.display = "none";
+
+            } else {
+
+                descBox.style.display = "flex";
+
+            };
+
+        });
+
+    };
+
+}
+
+export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener}
