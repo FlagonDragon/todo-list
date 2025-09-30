@@ -75,6 +75,7 @@ function writeContent() {
                     todoDesc.classList.add('todoDesc');
                     todoDesc.classList.add('detail');
                     todoDesc.textContent = todo.description;
+                    todoDesc.contentEditable = "true";
                     descDiv.appendChild(todoDesc);
 
                     var todoPrio = document.createElement('span');

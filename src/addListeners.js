@@ -11,8 +11,8 @@ const addProjectBtn = document.getElementById("addProjectBtn");
 const todoDialog = document.getElementById("todoDialog");
 const targetProjectInput = todoDialog.querySelector("#targetProject");
 const titleInput = todoDialog.querySelector("#title");
-const descriptionInput = todoDialog.querySelector("#description");
 const dueDateInput = todoDialog.querySelector("#dueDate");
+const descriptionInput = todoDialog.querySelector("#description");
 const priorityInput = todoDialog.querySelector("#priority");
 const confirmBtn = todoDialog.querySelector("#confirmBtn");
 
@@ -66,7 +66,7 @@ function addTodoConfirmListener() {
 
         todoDialog.close();
 
-        addTodo(targetProjectInput.value, titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value);
+        addTodo(targetProjectInput.value, titleInput.value, dueDateInput.value, descriptionInput.value, priorityInput.value);
 
         writeContent();
 

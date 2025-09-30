@@ -2,11 +2,11 @@
 
 class Todo {
     
-    constructor(title, description, dueDate, priority) {
+    constructor(title, dueDate, description, priority) {
 
         this.title = title;
-        this.description = description;
         this.dueDate = dueDate;
+        this.description = description;
         this.priority = priority;
 
     };
@@ -25,9 +25,9 @@ function testFinder(targetProject) {
 
 }
 
-function addTodo(targetProject, title, description, dueDate, priority) {
+function addTodo(targetProject, title, dueDate, description, priority) {
     
-    var newTodo = new Todo(title, description, dueDate, priority);
+    var newTodo = new Todo(title, dueDate, description, priority);
 
     myProjects[testFinder(targetProject)].todos.push(newTodo);
 
