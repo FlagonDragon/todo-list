@@ -50,10 +50,19 @@ function writeContent() {
             todoDiv.classList.add('todoDiv');
             projectDiv.appendChild(todoDiv);
 
+                var titleDiv = document.createElement('div');
+                titleDiv.classList.add('titleDiv');
+                todoDiv.appendChild(titleDiv);
+
+                var todoRadio = document.createElement('input');
+                todoRadio.classList.add('todoTitle');
+                todoRadio.type = 'radio'
+                titleDiv.appendChild(todoRadio);
+
                 var todoTitle = document.createElement('span');
                 todoTitle.classList.add('todoTitle');
                 todoTitle.textContent = todo.title;
-                todoDiv.appendChild(todoTitle);
+                titleDiv.appendChild(todoTitle);
 
                 var todoDate = document.createElement('span');
                 todoDate.classList.add('todoDate');
