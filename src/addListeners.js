@@ -159,4 +159,20 @@ function addRadioListeners() {
 
 };
 
-export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener, addRadioListeners}
+function addDeleteListeners() {
+
+    const deleteBtns = document.querySelectorAll('.todoDelete');
+
+    for (let deleteBtn of deleteBtns) {
+
+        deleteBtn.addEventListener('click', () => {
+
+            console.log('bonk');
+
+        });
+
+    };
+
+};
+
+export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener, addRadioListeners, addDeleteListeners}

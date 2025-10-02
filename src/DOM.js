@@ -1,6 +1,6 @@
 // DOM manipulation
 
-import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners} from './addListeners.js'
+import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners, addDeleteListeners} from './addListeners.js'
 import icon from './delete.png'
 
 let content = document.getElementById('content');
@@ -13,9 +13,9 @@ function writeContent() {
     project.remove();
     };
 
-    myProjects.forEach(project => {
+    for (let i = 0; i < myProjects.length; i++) {
 
-        console.log(project.name);
+        console.log(myProjects[i].name);
 
         var projectDiv = document.createElement('div');
         projectDiv.classList.add('projectDiv');
@@ -31,7 +31,7 @@ function writeContent() {
 
         var projectName = document.createElement('span');
         projectName.classList.add('headerLeft');
-        projectName.textContent = project.name
+        projectName.textContent = myProjects[i].name;
         headerLeft.appendChild(projectName);
 
         var headerRight = document.createElement('div');
@@ -43,7 +43,12 @@ function writeContent() {
         addTodoBtn.textContent = 'Add Todo';
         headerRight.appendChild(addTodoBtn);
 
-        project.todos.forEach(todo => {
+        var num = i;
+
+        console.log(num);
+        
+
+        myProjects[i].todos.forEach(todo => {
 
             console.log(todo.title)
 
@@ -105,12 +110,13 @@ function writeContent() {
 
         });
 
-    });
+    };
 
     addProjectListener();
     addTodoListeners();
     addExpandListener();
     addRadioListeners();
+    addDeleteListeners();
 
 };
 
