@@ -3,6 +3,7 @@
 import addTodo from './todos.js'
 import writeContent from './DOM.js'
 import addProject from './projects.js'
+import { ja } from 'date-fns/locale';
 
 const projectDialog = document.getElementById("projectDialog");
 const nameInput = projectDialog.querySelector("#name");
@@ -167,6 +168,9 @@ function addRadioListeners() {
 
 // });
 
+var i = 0;
+var j = 0;
+
 function addDeleteListeners() {
 
     const deleteBtns = document.querySelectorAll('.todoDelete');
@@ -174,6 +178,8 @@ function addDeleteListeners() {
     for (let deleteBtn of deleteBtns) {
 
         deleteBtn.addEventListener('click', () => {
+
+            myProjects[i].todos.splice(j,1);
 
             console.log('bonk');
 

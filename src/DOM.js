@@ -79,6 +79,17 @@ function writeContent() {
                         deleteIcon.src = icon;
                         todoDelete.appendChild(deleteIcon);
 
+                        todoDelete.addEventListener('click', () => {
+                
+                            myProjects[i].todos.splice(j,1);
+                
+                            console.log('bonk');
+                
+                            writeContent();
+                
+                        });
+                        
+
                 var todoDate = document.createElement('span');
                 todoDate.classList.add('todoDate');
                 todoDate.classList.add('detail');
@@ -116,7 +127,7 @@ function writeContent() {
     addTodoListeners();
     addExpandListener();
     addRadioListeners();
-    addDeleteListeners();
+    // addDeleteListeners();
 
 };
 
