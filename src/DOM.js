@@ -1,6 +1,6 @@
 // DOM manipulation
 
-import {addProjectListener, addTodoListeners, addExpandListener} from './addListeners.js'
+import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners} from './addListeners.js'
 
 let content = document.getElementById('content');
 
@@ -100,6 +100,7 @@ function writeContent() {
     addProjectListener();
     addTodoListeners();
     addExpandListener();
+    addRadioListeners();
 
 };
 

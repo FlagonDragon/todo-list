@@ -103,6 +103,60 @@ function addExpandListener() {
 
     };
 
-}
+};
 
-export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener}
+function addRadioListeners() {
+
+    const inputs = document.getElementsByTagName("input");
+
+    for (let input of inputs) {
+
+        if (input.type == 'radio') {
+
+            let checked = false;
+
+            let thisBtn = input.parentNode.parentNode.querySelector('.expandBtn');
+
+            input.addEventListener('click', () => {
+
+                if (checked) {
+
+                    checked = false;
+
+                    input.checked = false;
+
+                    input.parentNode.parentNode.style.textDecoration = 'none';
+                    input.parentNode.parentNode.style.color = 'black';
+
+                    
+                    console.log(thisBtn);
+                    console.log(input.parentNode.parentNode);
+                    
+                    thisBtn.style.backgroundColor = 'darkmagenta';
+                    thisBtn.style.color = 'white';
+
+                    console.log('was checked');
+
+                } else if (!checked) {
+
+                    checked = true;
+
+                    input.parentNode.parentNode.style.textDecoration = 'line-through'
+                    input.parentNode.parentNode.style.color = 'darkslategray'
+
+                    thisBtn.style.backgroundColor = 'darkslategray';
+                    thisBtn.style.color = 'black';
+
+                    console.log('was unchecked');
+
+                };            
+
+            });
+
+        };
+
+    };
+
+};
+
+export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener, addRadioListeners}
