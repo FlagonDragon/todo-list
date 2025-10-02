@@ -42,15 +42,10 @@ function writeContent() {
         addTodoBtn.classList.add('addTodoBtn');
         addTodoBtn.textContent = 'Add Todo';
         headerRight.appendChild(addTodoBtn);
-
-        var num = i;
-
-        console.log(num);
         
+        for (let j = 0; j < myProjects[i].todos.length; j++) {
 
-        myProjects[i].todos.forEach(todo => {
-
-            console.log(todo.title)
+            console.log(myProjects[i].todos[j].title);
 
             var todoDiv = document.createElement('div');
             todoDiv.classList.add('todoDiv');
@@ -67,8 +62,13 @@ function writeContent() {
 
                     var todoTitle = document.createElement('span');
                     todoTitle.classList.add('todoTitle');
-                    todoTitle.textContent = todo.title;
+                    todoTitle.textContent = myProjects[i].todos[j].title;
                     titleDiv.appendChild(todoTitle);
+
+                    var projectNum = i;
+                    var todoNum = j;
+
+                    console.log(projectNum + ', ' + todoNum);
 
                     var todoDelete = document.createElement('button');
                     todoDelete.classList.add('todoDelete');
@@ -82,7 +82,7 @@ function writeContent() {
                 var todoDate = document.createElement('span');
                 todoDate.classList.add('todoDate');
                 todoDate.classList.add('detail');
-                todoDate.textContent = todo.dueDate;
+                todoDate.textContent = myProjects[i].todos[j].dueDate;
                 todoDiv.appendChild(todoDate);
 
                 var expandBtn = document.createElement('button');
@@ -98,17 +98,17 @@ function writeContent() {
                     var todoDesc = document.createElement('span');
                     todoDesc.classList.add('todoDesc');
                     todoDesc.classList.add('detail');
-                    todoDesc.textContent = todo.description;
+                    todoDesc.textContent = myProjects[i].todos[j].description;
                     todoDesc.contentEditable = "true";
                     descDiv.appendChild(todoDesc);
 
                     var todoPrio = document.createElement('span');
                     todoPrio.classList.add('todoPrio');
                     todoPrio.classList.add('detail');
-                    todoPrio.textContent = todo.priority;
+                    todoPrio.textContent = myProjects[i].todos[j].priority;
                     descDiv.appendChild(todoPrio);
 
-        });
+        };
 
     };
 

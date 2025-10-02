@@ -159,6 +159,14 @@ function addRadioListeners() {
 
 };
 
+// removeBtn.addEventListener('click', () => {
+
+//     myLibrary.splice(num, 1);
+
+//     displayBooks(myLibrary);
+
+// });
+
 function addDeleteListeners() {
 
     const deleteBtns = document.querySelectorAll('.todoDelete');
@@ -168,6 +176,8 @@ function addDeleteListeners() {
         deleteBtn.addEventListener('click', () => {
 
             console.log('bonk');
+
+            writeContent();
 
         });
 
