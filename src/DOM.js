@@ -1,6 +1,7 @@
 // DOM manipulation
 
 import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners} from './addListeners.js'
+import icon from './delete.png'
 
 let content = document.getElementById('content');
 
@@ -54,15 +55,24 @@ function writeContent() {
                 titleDiv.classList.add('titleDiv');
                 todoDiv.appendChild(titleDiv);
 
-                var todoRadio = document.createElement('input');
-                todoRadio.classList.add('todoTitle');
-                todoRadio.type = 'radio'
-                titleDiv.appendChild(todoRadio);
+                    var todoRadio = document.createElement('input');
+                    todoRadio.classList.add('todoTitle');
+                    todoRadio.type = 'radio'
+                    titleDiv.appendChild(todoRadio);
 
-                var todoTitle = document.createElement('span');
-                todoTitle.classList.add('todoTitle');
-                todoTitle.textContent = todo.title;
-                titleDiv.appendChild(todoTitle);
+                    var todoTitle = document.createElement('span');
+                    todoTitle.classList.add('todoTitle');
+                    todoTitle.textContent = todo.title;
+                    titleDiv.appendChild(todoTitle);
+
+                    var todoDelete = document.createElement('button');
+                    todoDelete.classList.add('todoDelete');
+                    titleDiv.appendChild(todoDelete);
+
+                        var deleteIcon = document.createElement('img');
+                        deleteIcon.classList.add('deleteIcon');
+                        deleteIcon.src = icon;
+                        todoDelete.appendChild(deleteIcon);
 
                 var todoDate = document.createElement('span');
                 todoDate.classList.add('todoDate');

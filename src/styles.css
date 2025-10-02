@@ -72,6 +72,26 @@ h1 {
     border: 2px dotted yellow;
 }
 
+.titleDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.todoDelete {
+    background-color: rgb(16, 169, 193);
+    height: auto;
+    width: auto;
+    border: none;
+    margin-left: auto;
+}
+
+.deleteIcon {
+    width: 22px;
+    background-color: rgb(16, 169, 193);
+}
+
 .todoDiv .detail {
     font-size: 14px;
     margin-left: 21px;
