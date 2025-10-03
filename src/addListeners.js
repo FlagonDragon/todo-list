@@ -168,8 +168,6 @@ function addRadioListeners() {
 
 // });
 
-var i = 0;
-var j = 0;
 
 function addDeleteListeners() {
 
@@ -177,11 +175,16 @@ function addDeleteListeners() {
 
     for (let deleteBtn of deleteBtns) {
 
+        const idString = deleteBtn.getAttribute('id');
+
+        const idArray = idString.split(' ');
+
+        const i = idArray[0];
+        const j = idArray[1];
+        
         deleteBtn.addEventListener('click', () => {
-
+            
             myProjects[i].todos.splice(j,1);
-
-            console.log('bonk');
 
             writeContent();
 

@@ -15,7 +15,7 @@ function writeContent() {
 
     for (let i = 0; i < myProjects.length; i++) {
 
-        console.log(myProjects[i].name);
+        // console.log(myProjects[i].name);
 
         var projectDiv = document.createElement('div');
         projectDiv.classList.add('projectDiv');
@@ -45,7 +45,7 @@ function writeContent() {
         
         for (let j = 0; j < myProjects[i].todos.length; j++) {
 
-            console.log(myProjects[i].todos[j].title);
+            // console.log(myProjects[i].todos[j].title);
 
             var todoDiv = document.createElement('div');
             todoDiv.classList.add('todoDiv');
@@ -68,26 +68,32 @@ function writeContent() {
                     var projectNum = i;
                     var todoNum = j;
 
-                    console.log(projectNum + ', ' + todoNum);
+                  
 
                     var todoDelete = document.createElement('button');
-                    todoDelete.classList.add('todoDelete');
+                    todoDelete.classList.add(`todoDelete`);
+                    todoDelete.classList.add(`${projectNum}`);
+                    todoDelete.classList.add(`${todoNum}`);
+                    todoDelete.id = projectNum + ' ' + todoNum;
                     titleDiv.appendChild(todoDelete);
 
+                    // console.log(todoDelete.getAttribute('class'));
+                    // console.log(todoDelete.getAttribute('id'));
+                     
                         var deleteIcon = document.createElement('img');
                         deleteIcon.classList.add('deleteIcon');
                         deleteIcon.src = icon;
                         todoDelete.appendChild(deleteIcon);
 
-                        todoDelete.addEventListener('click', () => {
+                        // todoDelete.addEventListener('click', () => {
                 
-                            myProjects[i].todos.splice(j,1);
+                        //     myProjects[i].todos.splice(j,1);
                 
-                            console.log('bonk');
+                        //     console.log('bonk');
                 
-                            writeContent();
+                        //     writeContent();
                 
-                        });
+                        // });
                         
 
                 var todoDate = document.createElement('span');
@@ -127,7 +133,7 @@ function writeContent() {
     addTodoListeners();
     addExpandListener();
     addRadioListeners();
-    // addDeleteListeners();
+    addDeleteListeners();
 
 };
 

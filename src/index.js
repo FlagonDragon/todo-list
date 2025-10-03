@@ -35,6 +35,8 @@ addTodo('Cooking','Prepare breakfast','11/10','None','High');
 
 addTodo('Cooking','Bake sponge cake','11/10','None','Medium');
 
+addTodo('Cooking','Make banana mug cake','11/10','None','High');
+
 // console.log(testFinder('writing'));
 
 // testFinder('cooking');
