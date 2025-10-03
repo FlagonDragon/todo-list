@@ -1,6 +1,6 @@
 // DOM manipulation
 
-import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners, addDeleteListeners} from './addListeners.js'
+import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners, addProjectDeleteListeners, addTodoDeleteListeners} from './addListeners.js'
 import icon from './delete.png'
 
 let content = document.getElementById('content');
@@ -25,23 +25,27 @@ function writeContent() {
         headerDiv.classList.add('headerDiv');
         projectDiv.appendChild(headerDiv);
 
-        var headerLeft = document.createElement('div');
-        headerLeft.classList.add('headerLeft');
-        headerDiv.appendChild(headerLeft);
-
         var projectName = document.createElement('span');
-        projectName.classList.add('headerLeft');
+        projectName.classList.add('projectName');
         projectName.textContent = myProjects[i].name;
-        headerLeft.appendChild(projectName);
-
-        var headerRight = document.createElement('div');
-        headerRight.classList.add('headerRight');
-        headerDiv.appendChild(headerRight);
+        headerDiv.appendChild(projectName);
 
         var addTodoBtn = document.createElement('button');
         addTodoBtn.classList.add('addTodoBtn');
         addTodoBtn.textContent = 'Add Todo';
-        headerRight.appendChild(addTodoBtn);
+        headerDiv.appendChild(addTodoBtn);
+
+        var projectNum = i;
+
+        var projectDelete = document.createElement('button');
+        projectDelete.classList.add(`projectDelete`);
+        projectDelete.classList.add(`${projectNum}`);
+        headerDiv.appendChild(projectDelete);
+            
+            var deleteIcon = document.createElement('img');
+            deleteIcon.classList.add('deleteIcon');
+            deleteIcon.src = icon;
+            projectDelete.appendChild(deleteIcon);
         
         for (let j = 0; j < myProjects[i].todos.length; j++) {
 
@@ -65,10 +69,7 @@ function writeContent() {
                     todoTitle.textContent = myProjects[i].todos[j].title;
                     titleDiv.appendChild(todoTitle);
 
-                    var projectNum = i;
                     var todoNum = j;
-
-                  
 
                     var todoDelete = document.createElement('button');
                     todoDelete.classList.add(`todoDelete`);
@@ -76,26 +77,12 @@ function writeContent() {
                     todoDelete.classList.add(`${todoNum}`);
                     todoDelete.id = projectNum + ' ' + todoNum;
                     titleDiv.appendChild(todoDelete);
-
-                    // console.log(todoDelete.getAttribute('class'));
-                    // console.log(todoDelete.getAttribute('id'));
                      
                         var deleteIcon = document.createElement('img');
                         deleteIcon.classList.add('deleteIcon');
                         deleteIcon.src = icon;
                         todoDelete.appendChild(deleteIcon);
-
-                        // todoDelete.addEventListener('click', () => {
-                
-                        //     myProjects[i].todos.splice(j,1);
-                
-                        //     console.log('bonk');
-                
-                        //     writeContent();
-                
-                        // });
                         
-
                 var todoDate = document.createElement('span');
                 todoDate.classList.add('todoDate');
                 todoDate.classList.add('detail');
@@ -133,7 +120,8 @@ function writeContent() {
     addTodoListeners();
     addExpandListener();
     addRadioListeners();
-    addDeleteListeners();
+    addProjectDeleteListeners();
+    addTodoDeleteListeners();
 
 };
 

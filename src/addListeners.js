@@ -168,8 +168,34 @@ function addRadioListeners() {
 
 // });
 
+function addProjectDeleteListeners() {
 
-function addDeleteListeners() {
+    const deleteBtns = document.querySelectorAll('.projectDelete');
+
+    for (let deleteBtn of deleteBtns) {
+
+        const classString = deleteBtn.getAttribute('class');
+
+        const classArray = classString.split(' ');
+
+        const i = classArray[1];
+
+        console.log(classArray);
+        
+        deleteBtn.addEventListener('click', () => {
+            
+            myProjects.splice(i,1);
+
+            writeContent();
+
+        });
+
+    };
+
+};
+
+
+function addTodoDeleteListeners() {
 
     const deleteBtns = document.querySelectorAll('.todoDelete');
 
@@ -194,4 +220,4 @@ function addDeleteListeners() {
 
 };
 
-export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener, addRadioListeners, addDeleteListeners}
+export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener, addRadioListeners, addProjectDeleteListeners, addTodoDeleteListeners}
