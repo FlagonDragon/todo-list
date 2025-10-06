@@ -19,12 +19,42 @@ function storageAvailable(type) {
   }
 }
 
+function storageFeedback(type) {
+
+  if (storageAvailable(type)) {
+
+  console.log('Yippee! We can use localStorage awesomeness');
+
+  } else {
+
+  alert('Too bad, no localStorage for us');
+
+  };
+
+};
+
 function getStorage() {
 
-    console.log('hi');
+  let projectsTest = JSON.parse(localStorage.getItem('userProjects'));
+  
+  myProjects = projectsTest;
 
-    
-    
-}
+  // if (myProjects) {
 
-export {storageAvailable, getStorage}
+  //   console.log('projects modified');
+
+  // } else {
+
+  //   console.log('no project data, bruv.');
+    
+  // };
+
+};
+
+function setStorage() {
+
+  localStorage.setItem('userProjects', JSON.stringify(myProjects))
+
+};
+
+export {storageAvailable,storageFeedback, getStorage, setStorage}

@@ -1,6 +1,7 @@
 // DOM manipulation
 
 import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners, addProjectDeleteListeners, addTodoDeleteListeners} from './addListeners.js'
+import {setStorage} from './storage.js'
 import icon from './delete.png'
 
 let content = document.getElementById('content');
@@ -122,6 +123,8 @@ function writeContent() {
     addRadioListeners();
     addProjectDeleteListeners();
     addTodoDeleteListeners();
+
+    setStorage();
 
 };
 
