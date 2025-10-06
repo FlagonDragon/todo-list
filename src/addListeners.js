@@ -7,6 +7,7 @@ import { ja } from 'date-fns/locale';
 
 const projectDialog = document.getElementById("projectDialog");
 const nameInput = projectDialog.querySelector("#name");
+const projectConfirm = projectDialog.querySelector("#projectConfirm");
 const addProjectBtn = document.getElementById("addProjectBtn");
 
 const todoDialog = document.getElementById("todoDialog");
@@ -15,7 +16,7 @@ const titleInput = todoDialog.querySelector("#title");
 const dueDateInput = todoDialog.querySelector("#dueDate");
 const descriptionInput = todoDialog.querySelector("#description");
 const priorityInput = todoDialog.querySelector("#priority");
-const confirmBtn = todoDialog.querySelector("#confirmBtn");
+const todoConfirm = todoDialog.querySelector("#todoConfirm");
 
 function addProjectListener() {
 
@@ -45,7 +46,7 @@ function addTodoListeners() {
 
 function addProjectConfirmListener() {
 
-    confirmButton.addEventListener('click', (event) => {
+    projectConfirm.addEventListener('click', (event) => {
 
         event.preventDefault();
 
@@ -61,7 +62,7 @@ function addProjectConfirmListener() {
 
 function addTodoConfirmListener() {
 
-    confirmBtn.addEventListener('click', (event) => {
+    todoConfirm.addEventListener('click', (event) => {
 
         event.preventDefault();
 

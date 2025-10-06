@@ -5,6 +5,7 @@ import addProject from './projects.js'
 import addTodo from './todos.js'
 import {addProjectConfirmListener, addTodoConfirmListener} from './addListeners.js'
 import writeContent from './DOM.js'
+import {storageAvailable} from './storage.js'
 
 window.myProjects = [];
 
@@ -47,59 +48,14 @@ writeContent();
 addProjectConfirmListener();
 addTodoConfirmListener();
 
-const inputs = document.getElementsByTagName("input");
+if (storageAvailable("localStorage")) {
 
-for (let input of inputs) {
+console.log('Yippee! We can use localStorage awesomeness')   
 
+} else {
 
-    if (input.type == 'radio') {
-
-        let checked = false;
-
-        let thisBtn = input.parentNode.parentNode.querySelector('.expandBtn');
-
-        input.addEventListener('click', () => {
-
-            if (checked) {
-
-                checked = false;
-
-                input.checked = false;
-
-                input.parentNode.parentNode.style.textDecoration = 'none';
-                input.parentNode.parentNode.style.color = 'black';
-
-                
-                console.log(thisBtn);
-                console.log(input.parentNode.parentNode);
-                
-                thisBtn.style.backgroundColor = 'darkmagenta';
-                thisBtn.style.color = 'white';
-
-                console.log('was checked');
-
-            } else if (!checked) {
-
-                checked = true;
-
-                input.parentNode.parentNode.style.textDecoration = 'line-through'
-                input.parentNode.parentNode.style.color = 'darkslategray'
-
-                thisBtn.style.backgroundColor = 'darkslategray';
-                thisBtn.style.color = 'black';
-
-                console.log('was unchecked');
-
-            };            
-
-        });
-
-    };
-
-};
-
-
-    
+alert('Too bad, no localStorage for us') 
+}
 
 
 
