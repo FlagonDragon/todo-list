@@ -1,10 +1,16 @@
 // DOM manipulation
 
-import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners, addProjectDeleteListeners, addTodoDeleteListeners} from './addListeners.js'
+import {addProjectListener, addTodoListeners, addExpandListener, addRadioListeners, addProjectDeleteListeners, addTodoDeleteListeners, addDescEditListeners} from './addListeners.js'
 import {setStorage} from './storage.js'
 import icon from './delete.png'
 
 let content = document.getElementById('content');
+
+function logChange() {
+
+    console.log('description changed');
+    
+};
 
 function writeContent() {
 
@@ -103,6 +109,7 @@ function writeContent() {
                     var todoDesc = document.createElement('span');
                     todoDesc.classList.add('todoDesc');
                     todoDesc.classList.add('detail');
+                    todoDesc.id = projectNum + ' ' + todoNum;
                     todoDesc.textContent = myProjects[i].todos[j].description;
                     todoDesc.contentEditable = "true";
                     descDiv.appendChild(todoDesc);
@@ -123,6 +130,7 @@ function writeContent() {
     addRadioListeners();
     addProjectDeleteListeners();
     addTodoDeleteListeners();
+    addDescEditListeners();
 
     setStorage();
 

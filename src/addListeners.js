@@ -1,8 +1,9 @@
 // add todo listeners to buttons
 
-import addTodo from './todos.js'
-import writeContent from './DOM.js'
-import addProject from './projects.js'
+import addTodo from './todos.js';
+import writeContent from './DOM.js';
+import addProject from './projects.js';
+import {setStorage} from './storage.js';
 import { ja } from 'date-fns/locale';
 
 const projectDialog = document.getElementById("projectDialog");
@@ -221,4 +222,28 @@ function addTodoDeleteListeners() {
 
 };
 
-export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener, addRadioListeners, addProjectDeleteListeners, addTodoDeleteListeners}
+function addDescEditListeners() {
+
+    const todoDescs = document.querySelectorAll('.todoDesc');
+
+    for (let todoDesc of todoDescs) {
+
+        const idString = todoDesc.getAttribute('id');
+
+        const idArray = idString.split(' ');
+
+        const i = idArray[0];
+        const j = idArray[1];
+
+        todoDesc.addEventListener('input', () => {
+
+            myProjects[i].todos[j].description = todoDesc.textContent;
+            setStorage();
+
+        });
+
+    };
+
+};
+
+export {addProjectListener, addTodoListeners, addProjectConfirmListener, addTodoConfirmListener, addExpandListener, addRadioListeners, addProjectDeleteListeners, addTodoDeleteListeners, addDescEditListeners}
