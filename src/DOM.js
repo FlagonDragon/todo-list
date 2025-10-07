@@ -37,12 +37,13 @@ function writeContent() {
         projectName.textContent = myProjects[i].name;
         headerDiv.appendChild(projectName);
 
+        var projectNum = i;
+
         var addTodoBtn = document.createElement('button');
         addTodoBtn.classList.add('addTodoBtn');
+        addTodoBtn.id = projectNum;
         addTodoBtn.textContent = 'Add Todo';
         headerDiv.appendChild(addTodoBtn);
-
-        var projectNum = i;
 
         var projectDelete = document.createElement('button');
         projectDelete.classList.add(`projectDelete`);

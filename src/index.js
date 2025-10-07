@@ -9,6 +9,8 @@ import {storageFeedback, getStorage, setStorage} from './storage.js'
 
 window.myProjects = [];
 
+window.addTodoId = '';
+
 storageFeedback('localStorage');
 
 getStorage();

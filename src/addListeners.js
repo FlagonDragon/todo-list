@@ -12,7 +12,6 @@ const projectConfirm = projectDialog.querySelector("#projectConfirm");
 const addProjectBtn = document.getElementById("addProjectBtn");
 
 const todoDialog = document.getElementById("todoDialog");
-const targetProjectInput = todoDialog.querySelector("#targetProject");
 const titleInput = todoDialog.querySelector("#title");
 const dueDateInput = todoDialog.querySelector("#dueDate");
 const descriptionInput = todoDialog.querySelector("#description");
@@ -36,6 +35,8 @@ function addTodoListeners() {
     for (let button of addTodoBtns) {
 
         button.addEventListener('click', () => {
+
+            addTodoId = button.getAttribute('id')
 
             todoDialog.showModal();
 
@@ -63,17 +64,17 @@ function addProjectConfirmListener() {
 
 function addTodoConfirmListener() {
 
-    todoConfirm.addEventListener('click', (event) => {
+        todoConfirm.addEventListener('click', (event) => {
 
         event.preventDefault();
 
         todoDialog.close();
 
-        addTodo(targetProjectInput.value, titleInput.value, dueDateInput.value, descriptionInput.value, priorityInput.value);
+        addTodo(myProjects[addTodoId].name, titleInput.value, dueDateInput.value, descriptionInput.value, priorityInput.value);
 
         writeContent();
 
-    });
+        });
 
 };
 
