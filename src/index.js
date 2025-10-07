@@ -14,7 +14,7 @@ getStorage();
 
 console.log(myProjects);
 
-if (myProjects.length == 0) {
+if (!(myProjects.length != 0)) {
 
     addProject('Project');
 
