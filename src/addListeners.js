@@ -135,7 +135,7 @@ function addRadioListeners() {
                     console.log(thisBtn);
                     console.log(input.parentNode.parentNode);
                     
-                    thisBtn.style.backgroundColor = 'darkmagenta';
+                    thisBtn.style.backgroundColor = '#296968';
                     thisBtn.style.color = 'white';
 
                     console.log('was checked');

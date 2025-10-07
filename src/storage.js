@@ -35,9 +35,9 @@ function storageFeedback(type) {
 
 function getStorage() {
 
-  let projectsTest = JSON.parse(localStorage.getItem('userProjects'));
+  let localProjects = JSON.parse(localStorage.getItem('userProjects'));
   
-  myProjects = projectsTest;
+  myProjects = localProjects;
 
   // if (myProjects) {
 

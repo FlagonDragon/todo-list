@@ -11,26 +11,27 @@ window.myProjects = [];
 
 storageFeedback('localStorage');
 
-addProject('Yoga');
-addProject('Cooking');
-addProject('Writing');
-addProject('Singing');
-addProject('Studying');
-addTodo('Yoga','Stretch legs', '08/10','None','Low');
-addTodo('Cooking','Prepare breakfast','11/10','None','High');
-addTodo('Cooking','Bake sponge cake','11/10','None','Medium');
-addTodo('Cooking','Make banana mug cake','11/10','None','High');
-
-
 getStorage();
 
+// addProject('Yoga');
+// addProject('Cooking');
+// addProject('Writing');
+// addProject('Singing');
+// addProject('Studying');
+// addTodo('Yoga','Stretch legs', '08/10','None','Low');
+// addTodo('Cooking','Prepare breakfast','11/10','None','High');
+// addTodo('Cooking','Bake sponge cake','11/10','None','Medium');
+
+if (myProjects.length == 0) {
+
+    addProject('Project');
+
+}
 
 writeContent();
 
 addProjectConfirmListener();
 addTodoConfirmListener();
-setStorage();
-
 
 
 
